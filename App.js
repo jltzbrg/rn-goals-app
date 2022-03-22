@@ -25,7 +25,11 @@ export default function App() {
       </View>
       <View style={styles.goalsContainer}>
         {coureGoals.map((goal, index) => {
-          return <Text key={index}>{goal}</Text>;
+          return (
+            <View style={styles.goalItem} key={index}>
+              <Text style={styles.goalText}>{goal}</Text>
+            </View>
+          );
         })}
       </View>
     </View>
@@ -37,6 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     paddingHorizontal: 16,
+    backgroundColor: "#FBF3E4",
   },
   inputcontainter: {
     flex: 1,
@@ -57,5 +62,14 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 5,
+  },
+  goalItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: "#1F1D36",
+  },
+  goalText: {
+    color: "white",
   },
 });
